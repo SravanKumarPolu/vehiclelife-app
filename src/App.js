@@ -1,18 +1,37 @@
-
+import React from 'react';
+import { BrowserRouter ,Routes,Route,Link} from 'react-router-dom';
 import './App.css';
 
-function App() {
+import Home from './pages/Home';
+import About from './pages/About';
+
+
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-     <h1>I am starting VehicleLife app</h1>
+  <BrowserRouter>
+      <header>
+        <Link className='site-logo' to="/">#VANLIFE</Link>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/about">About </Link>
+        </nav>
       </header>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+
+      </Routes>
+
+    </BrowserRouter>
+    
+  
   );
 }
 
-export default App;
+
+
+
+ 
+ 
