@@ -59,7 +59,7 @@ header a:hover{
 
 /* Home page */
 .home-container{
-  background: linear-gradient(0deg, rgba(0,0,0,0.46), rgba(0,0,0,0.46)), url("./assets/images/about-hero.png") no-repeat center center;
+  background: linear-gradient(0deg, rgba(0,0,0,0.46), rgba(0,0,0,0.46)), url("./assets/images/home-hero.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -132,3 +132,59 @@ transition:transform .1s ease-in-out ;
   border-radius: 10px;
 
 }
+.van-list-container {
+  display: block;
+  margin: 8px;
+  padding: 8px;
+}
+
+.van-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  
+}
+.van-title{
+  border:1.5px solid gold;
+  margin: 24px;
+  padding: 25px;
+}
+.van-list img {
+    width: 150px;
+  margin: 2px;
+  padding: 5px;
+  border-radius:10px;
+}
+
+.van-info {
+  margin: 8px;
+  padding: 8px;
+}
+
+.van-info h3 {
+  margin: 8px;
+  padding: 8px;
+font-size: medium;
+}
+
+.van-info p {
+  margin: 8px;
+  padding: 8px;
+ font-size: small;
+}
+
+.van-list > .van-title > .selected{
+  color: white;
+  background:blueviolet;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+
+
+
+
