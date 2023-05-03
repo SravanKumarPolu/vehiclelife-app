@@ -179,12 +179,14 @@ font-size: medium;
 .van-list > .van-title > .selected{
   color: white;
   background:blueviolet;
-  padding: 5px;
-  margin: 5px;
+  padding: 8px;
+  margin: 6px;
   border-radius: 5px;
 }
 
 
-
+.van-list > .van-title > .selected:hover{
+  background:rgb(226, 43, 147);
+}
 
 
