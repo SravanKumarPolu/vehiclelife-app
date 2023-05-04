@@ -14,7 +14,8 @@ createServer({
       type: "luxury" 
     })
     server.create("van", { 
-      id: "2", 
+      id: "2",
+      hostId:"123", 
       name: "Beach Bum", 
       price: 900,
       description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior, and ample storage space, the Cruiser offers a beautiful view wherever you go.", 
@@ -32,6 +33,7 @@ createServer({
 
     server.create("van", { 
       id: "4", 
+      hostId:"123",
       name: "Dreamfinder", 
       price: 1700,
       description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior, and ample storage space, the Cruiser offers a beautiful view wherever you go.",
@@ -48,6 +50,7 @@ createServer({
     })
     server.create("van", { 
       id: "5", 
+      hostId:"123",
       name: "Green Wonder", 
       price: 1400,
       description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior, and ample storage space, the Cruiser offers a beautiful view wherever you go.",
@@ -66,5 +69,15 @@ createServer({
       const id = request.params.id
       return schema.vans.find(id)
     })
+    
+    this.get('/host/vans', (schema, request) => {
+      return schema.vans.where({hostId:"123"})
+    })
+
+    this.get('/host/vans/:id', (schema, request) => {
+      const id = request.params.id
+      return schema.vans.findBy ({id,hostId:"123"})
+    })
+
   }
 })

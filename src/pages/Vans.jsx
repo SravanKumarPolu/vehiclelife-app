@@ -15,8 +15,8 @@ export default function Vans(){
     const vanElements=vans.map(van=>(
         
      <div key={van.id} className="van-title" >
-     <Link to={`/vans/${van.id}`}> 
-     <img src={van.imageUrl} />
+     <Link to={`/vans/${van.id}`} > 
+     <img src={van.imageUrl} alt="" />
      <div className="van-info"  >
         <h3 >{van.name}</h3>
         <p>{van.price} <span>/day</span></p>
@@ -29,7 +29,7 @@ export default function Vans(){
     return(
         <div className="van-list-container">
         <h1>Explore our van Options</h1>
-        <div className=" van-list " style={{color:'red'}}>
+        <div className=" van-list " >
         {vanElements}
         </div>
         </div>
