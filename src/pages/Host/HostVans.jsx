@@ -17,7 +17,7 @@ export default function HostVans(){
            <img src={van.imageUrl}  />
            <div className='host-van-info' >
        <h3 >{van.name}</h3>
-       <p>{van.price}/day</p>
+       <p>₹{van.price}/day</p>
     </div>
 
            </div>
@@ -27,9 +27,9 @@ export default function HostVans(){
    ))
    return(
     <>
-   <section>
+   <section className="host-van-list-container" >
 
-        <h1 className="host-van-list-container">Your listed vans</h1>
+        <h1 >Your listed vans</h1>
         <div className=" host-van-list " >
         {
             vans.length>0?(

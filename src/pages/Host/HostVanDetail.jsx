@@ -18,11 +18,14 @@ export default function HostVanDetail(){
     return(
         <>
             <h1> Host van Detail page</h1>
-        <div>
+        <div className='host-van-details-container'>
         <img src={currentVan.imageUrl} width={150} />
+        <div className='host-van-details'>
+       <p> <span>{currentVan.type}</span></p>
         <h2>{currentVan.name}</h2>
-        <p>{currentVan.price}</p>
-        <p>{currentVan.type}</p>
+        <p>₹{currentVan.price}/day</p>
+        </div>
+        
         </div>
         </>
         

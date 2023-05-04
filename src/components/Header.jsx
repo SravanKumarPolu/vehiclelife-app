@@ -2,17 +2,15 @@ import React from "react";
 import { Link,NavLink } from "react-router-dom";
 
 export default function Header() {
-  const activeStyle={
-    texDecoration: "none",
-  fontWeight: "bold",
-  color:"red"
-  }
+  
   return (
     <header>
       <Link className="site-logo" to="/" >
         #VANLIFE
       </Link>
       <nav>
+      <NavLink  to="/host"
+className={({isActive})=>isActive? "active-link" : null}>Host</NavLink>
         <NavLink to="/" className={({isActive})=>isActive? "active-link" : null}
         >Home</NavLink>
         <NavLink to="/about"
@@ -20,8 +18,7 @@ export default function Header() {
         >About </NavLink>
         <NavLink to="/vans"
         className={({isActive})=>isActive? "active-link" : null}>Vans</NavLink>
-        <NavLink  to="/host"
-        style ={({isActive})=>isActive? activeStyle : null}>Host</NavLink>
+        
       </nav>
     </header>
   );

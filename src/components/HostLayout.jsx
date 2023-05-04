@@ -5,7 +5,7 @@ export default function HostLayout(){
     const activeStyle={
         texDecoration: "none",
       fontWeight: "bold",
-      color:"red"
+      color:"rgb(226, 43, 147)"
       }
     return(
         <>
