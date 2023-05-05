@@ -23,18 +23,20 @@ export default function HostVanDetail(){
   }
     return(
         <>
-        <section>
+        <section className='host-van-details-section'>
         <Link to=".." relative='path' className="back-button" >&larr; <span>Back to all vans </span></Link>
-            <h1> Host van Detail page</h1>
+            <h1 className='host-van-details-page'> Host van Detail page</h1>
         <div className='host-van-details-container'>
+        <div className='host-van-details-block'>
         <img src={currentVan.imageUrl} width={150} />
         <div className='host-van-details'>
        <p> <span>{currentVan.type}</span></p>
         <h2>{currentVan.name}</h2>
         <p>₹{currentVan.price}/day</p>
         </div>
+        </div>
         <nav className='host-van-detail-nav'>
-<NavLink to="."  end
+<NavLink to="." end
 style={({isActive})=>isActive ? activeStyles : null }
 >Infor </NavLink>
 <NavLink to="price"

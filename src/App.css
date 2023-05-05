@@ -196,7 +196,51 @@ a.active-link{
   margin: 8px;
   padding: 8px;
 }
-
+.van-list-filter-buttons {
+ 
+  display: flex;
+  align-items: center;
+  padding-block: 10px;
+}
+.van-list-filter-buttons a{
+  text-decoration: none;
+  padding: 4px;
+  margin: 8px;
+}
+ .van-type-comfort {
+  padding: 4px;
+  color:white;
+  width: 4em;
+  border-radius: 4px;
+  background-color: rgb(255, 127, 212);
+}
+.van-type-luxury{
+  padding: 4px;
+  color:white;
+  width: 4em;
+  border-radius: 4px;
+  background-color: blueviolet;
+}
+.van-type-rugged{
+  padding: 4px;
+  border-radius: 4px;
+  color:white;
+  background-color: rgb(43, 192, 226);
+}
+.van-type-simple{
+  padding: 4px;
+  border-radius: 4px;
+  color:white;
+  background-color: rgb(226, 43, 128);
+}
+.van-type-clear-filter{
+  padding: 5px;
+  width: 4em;
+  text-align: center;
+  border-radius: 4px;
+  color:white;
+  background-color: rgb(226, 55, 43);
+}
 .van-list {
   display: flex;
   flex-wrap: wrap;
@@ -423,8 +467,35 @@ text-decoration: none;
 
 
 /* host-van-details */
+.host-van-details-section{
+
+margin: 14px;
+padding: 14px;
+}
+.back-button{
+  padding:5px;
+  margin:8px;
+  background-color: #FF8C38;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+
+}
+.host-van-details-page{
+  margin:12px;
+  padding: 12px;
+}
+
 .host-van-details-container{
   display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+}
+.host-van-details-block{
+  display: flex;
+
   padding: 20px;
   margin: 20px;
   background-color: white;
@@ -442,3 +513,35 @@ text-decoration: none;
 .host-van-details p{
   font-weight: 500;
 }
+.host-van-detail-nav a {
+background-color: #FFCC8D;
+text-decoration: none;
+ border-radius: 5px; 
+  padding: 6px;
+  margin: 6px;
+}
+.host-van-detail-image{
+  padding: 12px;
+  width: 12em;
+  margin: 6px;
+  border-radius: 1em;
+}
+.host-van-detail-price{
+  padding: 14px;
+  margin: 10px;
+
+}
+.host-van-detail-price span{
+  font-weight: 300;
+}
+.host-van-detail-info h4{
+ font-weight: lighter;
+}
+.host-van-detail-info h4 span{
+  font-weight:600;
+ } 
+ .host-van-detail-info h3{
+  font-weight:300;
+  font-style: oblique;
+ } 
+
