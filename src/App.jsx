@@ -7,6 +7,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import HostVans from "./pages/Host/HostVans";
 import HostVanDetail from "./pages/Host/HostVanDetail";
+import HostVanInfo from "./pages/Host/HostVanInfo";
+import HostVanPrice from "./pages/Host/HostVanPrice";
+import HostVanPhoto from "./pages/Host/HostVanPhoto";
 import VanDetail from "./pages/VanDetail";
 import Dashboard from "./pages/Host/Dashboard";
 import Income from "./pages/Host/Income";
@@ -31,7 +34,12 @@ export default function App() {
           <Route path="reviews" element={<Reviews />} />
           <Route path="income" element={<Income />} />
           <Route path="vans" element={<HostVans />} />
-          <Route path="vans/:id" element={<HostVanDetail />} />
+          <Route path="vans/:id" element={<HostVanDetail />} >
+              <Route  index  element={<HostVanInfo />} />
+              <Route  path="price" element={<HostVanPrice />}/>
+              <Route path="photo" element={<HostVanPhoto />}/>
+          </Route>
+
           </Route>
            
           </Route>
