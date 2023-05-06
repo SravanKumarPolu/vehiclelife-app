@@ -44,7 +44,7 @@ console.log(searchParams.toString());
             return prevParams
         })
        }
-
+ 
 
     return(
         <div className="van-list-container">
@@ -58,10 +58,20 @@ console.log(searchParams.toString());
                 <Link to="?type=simple" className="van-type-simple">Simple</Link> */}
 
                 {/* 2nd way of filter vans of #VanLife */}
-                <button onClick={()=>setSearchParams({type:"comfortable"})}>Comfort</button>
-                <button onClick={()=>setSearchParams({type:"luxury"})}>Luxury</button>
-                <button onClick={()=>setSearchParams({type:"rugged"})}>Rugged</button>
-                <button onClick={()=>setSearchParams({type:"simple"})}>Simple</button>
+              
+                <button onClick={()=>setSearchParams({type:"comfortable"})}
+                className={`van-type comfort  ${typeFilter==="comfortable"?"selected":""}`}
+                >Comfort</button>
+       
+                
+                <button onClick={()=>setSearchParams({type:"luxury"})}
+                 className={`van-type luxury  ${typeFilter==="luxury"?"selected":""}`}
+                >Luxury</button>
+                <button onClick={()=>setSearchParams({type:"rugged"})}
+                 className={`van-type rugged  ${typeFilter==="rugged"?"selected":""}`}
+                >Rugged</button>
+                <button onClick={()=>setSearchParams({type:"simple"})}
+                className={`van-type simple  ${typeFilter==="simple"?"selected":""}`} >Simple</button>
                 {/* <button onClick={()=>handleFilterChange("type","comfortable")}>Comfort</button>
                 <button onClick={()=>handleFilterChange({"type","luxury"})}>Luxury</button>
                 <button onClick={()=>handleFilterChange({"type","rugged"})}>Rugged</button>

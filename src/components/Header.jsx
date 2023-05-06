@@ -4,7 +4,7 @@ import { Link,NavLink } from "react-router-dom";
 export default function Header() {
   
   return (
-    <header>
+<header>
       <Link className="site-logo" to="/" >
         #VANLIFE
       </Link>
@@ -20,6 +20,9 @@ className={({isActive})=>isActive? "active-link" : null}>Host</NavLink>
         className={({isActive})=>isActive? "active-link" : null}>Vans</NavLink>
         
       </nav>
+
     </header>
+    
+
   );
 }

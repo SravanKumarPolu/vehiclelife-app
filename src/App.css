@@ -202,40 +202,75 @@ a.active-link{
   align-items: center;
   padding-block: 10px;
 }
+ .active-link1 button {
+  text-decoration: none;
+  font-weight: bold;
+  color:red
+}
+/* .van-list-filter-buttons button{
+background:rgb(237, 92, 175);
+border-radius: 4px;
+color:white;
+padding: 4px;
+margin: 4px;
+} */
+
+
 .van-list-filter-buttons a{
   text-decoration: none;
   padding: 4px;
   margin: 8px;
+  
 }
- .van-type-comfort {
+.van-list-filter-buttons button{
   padding: 4px;
-  color:white;
-  width: 4em;
+  width: 6em;
+  margin: 4px;
   border-radius: 4px;
-  background-color: rgb(255, 127, 212);
+  background-color:#FFCC8D;
 }
-.van-type-luxury{
+.selected{
+  background-color: #ffffff;
+  color: #161616;
+}
+.simple.selected{
   padding: 4px;
+  width: 6em;
+  margin: 4px;
   color:white;
-  width: 4em;
+  background-color: blueviolet;
+}
+ .comfort.selected {
+  padding: 4px;
+  width: 6em;
+  margin: 4px;
+  color:white;
+
   border-radius: 4px;
   background-color: blueviolet;
 }
-.van-type-rugged{
+.luxury.selected{
   padding: 4px;
+  width: 6em;
+  margin: 4px;
+  color:white;
+  
+  border-radius: 4px;
+  background-color: blueviolet;
+}
+.rugged.selected{
+  padding: 4px;
+  width: 6em;
+  margin: 4px;
   border-radius: 4px;
   color:white;
-  background-color: rgb(43, 192, 226);
+  background-color: blueviolet;
 }
-.van-type-simple{
-  padding: 4px;
-  border-radius: 4px;
-  color:white;
-  background-color: rgb(226, 43, 128);
-}
+
 .van-type-clear-filter{
-  padding: 5px;
-  width: 4em;
+  padding: 4px;
+  width: 6em;
+  margin: 4px;
   text-align: center;
   border-radius: 4px;
   color:white;
@@ -329,7 +364,10 @@ a>.van-list>.van-info p {
   margin: 6px;
   border-radius: 5px;
 }
-
+.van-type {
+  background: blueviolet;
+  color:white;
+}
 
 .van-title>a>.selected:hover {
   background: rgb(226, 43, 147);
@@ -545,3 +583,20 @@ text-decoration: none;
   font-style: oblique;
  } 
 
+.not-found-class{
+  font-weight: 700;
+   padding: 23px;
+   margin: 10px;
+   
+
+}
+ .not-found  {
+  padding: 23px;
+}
+.not-found-class a{
+  background-color: #161616;
+  color:white;
+  padding: 1em;
+  text-decoration: none;
+  margin-left:45%;
+}
