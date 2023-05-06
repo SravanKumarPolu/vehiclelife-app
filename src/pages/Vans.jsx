@@ -8,7 +8,7 @@ export default function Vans(){
     const [vans,setVans]=React.useState([])
     const typeFilter=searchParams.get("type")
     console.log(typeFilter); 
-
+console.log(searchParams.toString());
     React.useEffect(() => {
        fetch("/api/vans")
    .then(res=>res.json() )
@@ -22,7 +22,7 @@ export default function Vans(){
     const vanElements=displayedVans.map(van=>(
         
      <div key={van.id} className="van-title" >
-     <Link to={van.id} > 
+     <Link to={van.id} state={{search: `?${searchParams.toString()}`,type:typeFilter}} > 
      <img src={van.imageUrl} alt="" />
      <div className="van-info"  >
         <h3 >{van.name}</h3>

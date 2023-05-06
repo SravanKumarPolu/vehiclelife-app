@@ -5,6 +5,7 @@ import "./App.css";
 import Vans from "./pages/Vans";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import NotFound from "./pages/NotFound";
 import HostVans from "./pages/Host/HostVans";
 import HostVanDetail from "./pages/Host/HostVanDetail";
 import HostVanInfo from "./pages/Host/HostVanInfo";
@@ -24,6 +25,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+        
           <Route index  element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="vans" element={<Vans />} /> 
@@ -41,8 +43,9 @@ export default function App() {
           </Route>
 
           </Route>
-           
+          
           </Route>
+          <Route path="*" element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
   );
