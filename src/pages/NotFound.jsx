@@ -7,7 +7,7 @@ export default function NotFound(){
     return(
         <>
         <div className="not-found-wrapper">
-        <Header />
+        
         
         <main>
           <Outlet />
@@ -17,7 +17,7 @@ export default function NotFound(){
        </div>
         </main>
        
-        <Footer />
+       
       </div>
      
             
