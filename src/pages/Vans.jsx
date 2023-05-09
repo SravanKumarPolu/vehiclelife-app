@@ -1,5 +1,5 @@
 import React from "react";
-import { getVans } from "./api";
+import { getVans } from "../api";
 import {Link ,useSearchParams}  from 'react-router-dom'
 
 
@@ -9,10 +9,10 @@ export default function Vans(){
     const [loading,setLoading]=React.useState(false)
      const typeFilter=searchParams.get("type")
 
-    console.log(typeFilter); 
+//     console.log(typeFilter); 
   
    
-console.log(searchParams.toString());
+// console.log(searchParams.toString());
  
  
 
@@ -20,17 +20,21 @@ console.log(searchParams.toString());
 //        fetch("/api/vans")
 //    .then(res=>res.json() )
 //    .then(data=>setVans(data.vans))
-async function loadVans(){
-    setLoading(true)
-    const data= await getVans()
-    setVans(data)
-    setLoading(false)
-}
+async function loadVans() {
+    setLoading(true);
+    try {
+      const data = await getVans();
+      setVans(data);
+    } catch (err) {
+      console.log("Error loading vans:", err);
+    }
+    setLoading(false);
+  }
 loadVans()
 
 
     }, [])
-    console.log(vans)
+    // console.log(vans)
     
     const displayedVans=typeFilter
     ?vans.filter(van=>van.type===typeFilter)
@@ -51,7 +55,7 @@ loadVans()
     ))
     function handleFilterChange(key,value){
         setSearchParams(prevParams=>{
-            if(value==null){
+            if(value=== null){
                 prevParams.delete(key)
             }
             else{
