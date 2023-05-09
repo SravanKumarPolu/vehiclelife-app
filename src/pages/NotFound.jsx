@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link,Outlet} from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components//Footer";
+// import Header from "../components/Header";
+// import Footer from "../components//Footer";
 
 export default function NotFound(){
     return(
         <>
         <div className="not-found-wrapper">
-        
+        {/* <Header /> */}
         
         <main>
           <Outlet />
@@ -17,7 +17,7 @@ export default function NotFound(){
        </div>
         </main>
        
-       
+        {/* <Footer /> */}
       </div>
      
             

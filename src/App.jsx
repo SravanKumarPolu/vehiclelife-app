@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter,RouterProvider,createBrowserRouter,createRoutesFromElements, Routes, Route} from "react-router-dom";
 import "./App.css";
 
-import Vans,{loader as vansLoader} from "./pages/Vans";
+import Vans from "./pages/Vans";
 import Home from "./pages/Home";
 import About from "./pages/About";
 // import Error from "./components/Error"
@@ -31,7 +31,7 @@ export default function App() {
 
 <Route index element={<Home />} />
 <Route path="about" element={<About />} />
-<Route path="vans" element={<Vans /> }  loader={vansLoader} />
+<Route path="vans" element={<Vans /> }   />
 <Route path="vans/:id" element={<VanDetail />} />
 
 <Route path="host" element={<HostLayout />}>
@@ -48,6 +48,7 @@ export default function App() {
 </Route>
 <Route path="*" element={<NotFound />} />
 </Route>
+
     </Routes>
    </BrowserRouter>
       
