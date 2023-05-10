@@ -1,4 +1,5 @@
 import React from "react";
+import { BsPersonCircle } from 'react-icons/bs';
 import { Link,NavLink } from "react-router-dom";
 
 export default function Header() {
@@ -18,11 +19,19 @@ className={({isActive})=>isActive? "active-link" : null}>Host</NavLink>
         >About </NavLink>
         <NavLink to="/vans"
         className={({isActive})=>isActive? "active-link" : null}>Vans</NavLink>
-        
+      
+
+      <Link to="login" className="login-link"> 
+       
+      <BsPersonCircle className="login-icon" size={22} />
+
+       </Link>
       </nav>
+    
 
     </header>
     
 
-  );
+  )
+  
 }

@@ -15,12 +15,13 @@ createServer({
     })
     server.create("van", { 
       id: "2",
-      hostId:"123", 
+      
       name: "Beach Bum", 
       price: 900,
       description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior, and ample storage space, the Cruiser offers a beautiful view wherever you go.", 
       imageUrl: "https://assets.scrimba.com/advanced-react/react-router/beach-bum.png", 
-      type: "cheap" 
+      type: "cheap" ,
+      hostId:"123", 
     })
     server.create("van", { 
       id: "3", 
@@ -33,12 +34,13 @@ createServer({
 
     server.create("van", { 
       id: "4", 
-      hostId:"123",
+      
       name: "Dreamfinder", 
       price: 1700,
       description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior, and ample storage space, the Cruiser offers a beautiful view wherever you go.",
       imageUrl: "https://assets.scrimba.com/advanced-react/react-router/dreamfinder.png", 
-      type: "simple" 
+      type: "simple" ,
+      hostId:"123",
     })
     server.create("van", { 
       id: "6", 
@@ -50,12 +52,13 @@ createServer({
     })
     server.create("van", { 
       id: "5", 
-      hostId:"123",
-      name: "Green Wonder", 
+     
+      name: "Green Wonder...", 
       price: 1400,
       description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior, and ample storage space, the Cruiser offers a beautiful view wherever you go.",
       imageUrl: "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png", 
-      type: "rugged" 
+      type: "rugged" ,
+      hostId:"123",
     })
   },
   routes() {
@@ -64,8 +67,12 @@ createServer({
      this.timing=2000;
 
     this.get('/vans', (schema, request) => {
-      //  return new Response(400,{},{error:"Error fetching data"})
-       return schema.vans.all()
+      console.log("hiigh")
+      //  return new  Response(400, { }, { error: "Error fetching data" })
+      // return new Response ({coool:"sravan"},{status:200,statusText:"cool Error"})
+      // return {coool:"sravan"}
+      // return new Response(500, {}, { errors: ["The database went on vacation"] })
+          return schema.vans.all()
     }) 
 
     this.get('/vans/:id', (schema, request) => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { getVans } from "../api";
+import {  getVans }  from "./../api";
 import {Link ,useSearchParams}  from 'react-router-dom'
 
 
@@ -22,39 +22,47 @@ export default function Vans(){
 //    .then(data=>setVans(data.vans))
 async function loadVans() {
     setLoading(true);
-    try {
+    try{
+      
       const data = await getVans();
       setVans(data);
-    } catch (err) {
-      console.log("Error loading vans:", err);
+      console.log(data)
+      debugger
+    }catch(err) {
+      console.log("Error loading vans:");
+      console.log(err)
+     
     }
     setLoading(false);
+    
   }
 loadVans()
 
 
     }, [])
+
+
+    if(loading) {
+        return <h1>Loading...</h1>
+  }
+  
     // console.log(vans)
     
-    const displayedVans=typeFilter
-    ?vans.filter(van=>van.type===typeFilter)
-    :vans
-    const vanElements=displayedVans.map(van=>(
-        
-     <div key={van.id} className="van-title" >
-     <Link to={van.id} state={{search: `?${searchParams.toString()}`,type:typeFilter}} > 
-     <img src={van.imageUrl} alt="" />
-     <div className="van-info"  >
-        <h3 >{van.name}</h3>
-        <p>₹{van.price} <span>/day</span></p>
-     </div>
-        <p  className={`van-type${van.type} selected`} >{van.type}</p> 
+    const displayedVans = typeFilter ? vans.filter((van) => van.type === typeFilter) : vans;
+    const vanElements = displayedVans.map((van) => (
+      <div key={van.id} className="van-title">
+        <Link to={van.id} state={{ search: `?${searchParams.toString()}`, type: typeFilter }}>
+          <img src={van.imageUrl} alt="" />
+          <div className="van-info">
+            <h3>{van.name}</h3>
+            <p>₹{van.price} <span>/day</span></p>
+          </div>
+          <p className={`van-type${van.type} selected`}>{van.type}</p>
         </Link>
-     </div> 
-
-    ))
+      </div>
+    ));
     function handleFilterChange(key,value){
-        setSearchParams(prevParams=>{
+        setSearchParams(prevParams=>{ 
             if(value=== null){
                 prevParams.delete(key)
             }
@@ -64,9 +72,8 @@ loadVans()
             return prevParams
         })
        }
-if(loading) {
-    return <h1>Loading...</h1>
-}
+
+
 
 
     return(

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter,RouterProvider,createBrowserRouter,createRoutesFromElements, Routes, Route} from "react-router-dom";
 import "./App.css";
-
+import Login from "./pages/Login";
 import Vans from "./pages/Vans";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -31,6 +31,7 @@ export default function App() {
 
 <Route index element={<Home />} />
 <Route path="about" element={<About />} />
+<Route  path="login" element={<Login />}/>
 <Route path="vans" element={<Vans /> }   />
 <Route path="vans/:id" element={<VanDetail />} />
 
