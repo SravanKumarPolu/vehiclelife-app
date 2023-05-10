@@ -37,6 +37,7 @@ header .site-logo {
 }
 
 header a {
+  
   text-decoration: none;
   color: #4D4D4D;
   font-weight: 600;
@@ -46,6 +47,18 @@ header a {
 header a:hover {
   color: #161616;
   text-decoration: none;
+}
+header  .login-link  {
+margin-left: 12px;
+  cursor: pointer;
+}
+ .login-icon {
+  position: absolute;
+  padding: 1px;
+  right:1% ;
+  color: #FF8C38;
+  
+
 }
 
 .link-button {
@@ -71,6 +84,7 @@ a.active-link{
   font-weight: bold;
   color:red
 }
+
 
 /* Home page */
 .home-container {
@@ -424,6 +438,59 @@ a>.van-list>.van-info p {
 
 .van-detail-container .van-detail .link-button {
   background-color: #FF8C38;
+}
+
+
+
+/* Login page */
+
+.login-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 14px;
+  padding: 14px;
+  
+}
+.login-container h1{
+  font-weight: 600;
+  font-size:x-large;
+}
+.login-form{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+margin: 14px;
+
+}
+.login-form input{
+  padding: 8px;
+  width:20em;
+  border: none;
+  margin: 1px;
+  background-color:#ffffff;
+}
+.login-form input:is(:hover,:focus){
+  box-shadow: 0 0 2px 2px #FF8C38;
+  background-color:#ffffff;
+  
+}
+.login-form button{
+  padding: 10px;
+  margin: 25px;
+  width:  20em;
+  border:none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor:pointer;
+  
+}
+.login-form button:is(:hover,:focus){
+  box-shadow: 0 0 2px 2px;
+  background-color:#ffffff;
+  color: #FF8C38;
+  
 }
 
 
