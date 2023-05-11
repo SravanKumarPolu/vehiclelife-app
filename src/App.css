@@ -242,43 +242,55 @@ margin: 4px;
   margin: 4px;
   border-radius: 4px;
   background-color:#FFCC8D;
+  border:none;
+  border-color: transparent;
 }
 .selected{
   background-color: #ffffff;
   color: #161616;
-}
-.simple.selected{
-  padding: 4px;
-  width: 6em;
-  margin: 4px;
-  color:white;
-  background-color: blueviolet;
-}
- .comfort.selected {
-  padding: 4px;
-  width: 6em;
-  margin: 4px;
-  color:white;
-
-  border-radius: 4px;
-  background-color: blueviolet;
-}
-.luxury.selected{
-  padding: 4px;
-  width: 6em;
-  margin: 4px;
-  color:white;
   
-  border-radius: 4px;
-  background-color: blueviolet;
+
 }
-.rugged.selected{
+.simple.selected:is(:hover,:focus){
+  padding: 4px;
+  width: 6em;
+  margin: 4px;
+  font-weight: 600;
+  box-shadow: 0 0 1px 1px ;
+  color:gold;
+  background-color: white;
+}
+ .comfort.selected:is(:hover,:focus) {
+  padding: 4px;
+  width: 6em;
+  margin: 4px;
+  font-weight: 600;
+  box-shadow: 0 0 1px 1px ;
+  color:gold;
+  background-color: white;
+  border-radius: 4px;
+ 
+}
+.luxury.selected:is(:hover,:focus){
+  padding: 4px;
+  width: 6em;
+  margin: 4px;
+  font-weight: 600;
+  box-shadow: 0 0 1px 1px ;
+  color:gold;
+  background-color: white;
+  border-radius: 4px;
+
+}
+.rugged.selected:is(:hover,:focus){
   padding: 4px;
   width: 6em;
   margin: 4px;
   border-radius: 4px;
-  color:white;
-  background-color: blueviolet;
+  font-weight: 600;
+  box-shadow: 0 0 1px 1px ;
+  color:gold;
+  background-color: white;
 }
 
 .van-type-clear-filter{
@@ -287,8 +299,10 @@ margin: 4px;
   margin: 4px;
   text-align: center;
   border-radius: 4px;
-  color:white;
-  background-color: rgb(226, 55, 43);
+
+  
+
+  
 }
 .van-list {
   display: flex;
