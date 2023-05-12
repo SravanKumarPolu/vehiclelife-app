@@ -5,10 +5,10 @@ import Login from "./pages/Login";
 import Vans from "./pages/Vans";
 import Home from "./pages/Home";
 import About from "./pages/About";
-// import Error from "./components/Error"
+
 import NotFound from "./pages/NotFound";
-import HostVans from "./pages/Host/HostVans";
-import HostVanDetail from "./pages/Host/HostVanDetail";
+import HostVans,{loader as hostVansLoader} from "./pages/Host/HostVans";
+import HostVanDetail , {loader as hostVansDetailLoader} from "./pages/Host/HostVanDetail";
 import HostVanInfo from "./pages/Host/HostVanInfo";
 import HostVanPrice from "./pages/Host/HostVanPrice";
 import HostVanPhoto from "./pages/Host/HostVanPhoto";
@@ -17,42 +17,48 @@ import Dashboard from "./pages/Host/Dashboard";
 import Income from "./pages/Host/Income";
 import Reviews from "./pages/Host/Reviews";
 import Layout from "./components/Layout";
-
+import { requireAuth } from "./utils";
 import "./server";
 import HostLayout from "./components/HostLayout";
 
 
-export default function App() {
-  return (
-   <BrowserRouter>
-    <Routes>
-
-    <Route path="/" element={<Layout />}>
+const router=createBrowserRouter(createRoutesFromElements(
+  <Route path="/" element={<Layout />}>
 
 <Route index element={<Home />} />
 <Route path="about" element={<About />} />
 <Route  path="login" element={<Login />}/>
 <Route path="vans" element={<Vans /> }   />
 <Route path="vans/:id" element={<VanDetail />} />
-
 <Route path="host" element={<HostLayout />}>
-  <Route index element={<Dashboard />} />
-  <Route path="reviews" element={<Reviews />} />
-  <Route path="income" element={<Income />} />
-  <Route path="vans" element={<HostVans />} />
-  <Route path="vans/:id" element={<HostVanDetail />}>
-    <Route index element={<HostVanInfo />} />
+
+  <Route index element={<Dashboard />} 
+  loader={ async () =>  await requireAuth()   }  />
+  <Route path="reviews" element={<Reviews />} 
+
+   loader={ async () => { return null }  }   />
+  <Route path="income" element={<Income />} 
+  loader={ async () => { return null }  }   />
+  <Route path="vans" element={<HostVans />}
+   loader={ hostVansLoader } />
+  <Route path="vans/:id" element={<HostVanDetail />} 
+   loader={hostVansDetailLoader}  >
+    <Route index element={<HostVanInfo />} 
+     />
     <Route path="price" element={<HostVanPrice />} />
     <Route path="photo" element={<HostVanPhoto />} />
   </Route>
 
 </Route>
-<Route path="*" element={<NotFound />} />
+   <Route path="*" element={<NotFound />} />
 </Route>
 
-    </Routes>
-   </BrowserRouter>
-      
+))
+ 
+export default function App() {
+  return (
+<RouterProvider router={router} />
+       
   
   );
 }

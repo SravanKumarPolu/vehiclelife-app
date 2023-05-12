@@ -64,12 +64,12 @@ createServer({
   routes() {
     this.namespace = "api"
     this.logging=false
-     this.timing=1000;
+     this.timing=2000;
 
     this.get('/vans', (schema, request) => {
-      console.log("hiigh")
-      //  return new  Response(400, { }, { error: "Error fetching data" })
-      // return new Response ({coool:"sravan"},{status:200,statusText:"cool Error"})
+      
+      // return new  Response(400, { }, { error: "Error fetching data" })
+      //  return new Response ({coool:"sravan"},{status:200,statusText:"cool Error"})
       // return {coool:"sravan"}
       // return new Response(500, {}, { errors: ["The database went on vacation"] })
           return schema.vans.all()

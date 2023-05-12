@@ -27,7 +27,7 @@ async function loadVans() {
       const data = await getVans();
       setVans(data);
       console.log(data)
-      debugger
+      
     }catch(err) {
       console.log("Error loading vans:");
       console.log(err)
