@@ -42,7 +42,7 @@ export default function HostVanDetail(){
         </div>
         </div>
         <nav className='host-van-detail-nav'>
-<NavLink to="." end
+<NavLink to="." end 
 style={({isActive})=>isActive ? activeStyles : null }
 >Infor </NavLink>
 <NavLink to="price"

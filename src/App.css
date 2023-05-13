@@ -427,6 +427,7 @@ a>.van-list>.van-info p {
   text-align: center;
   margin: 20px;
   padding: 20px;
+ 
 
 }
 
@@ -635,9 +636,20 @@ padding: 14px;
 .host-van-detail-nav a {
 background-color: #FFCC8D;
 text-decoration: none;
+color:white;
  border-radius: 5px; 
   padding: 6px;
   margin: 6px;
+}
+
+.host-van-detail-nav a:is(:focus,:hover){
+  
+  font-weight: 600;
+  box-shadow: 0 0 1px 1px ;
+  color:gold;
+  background-color: white;
+  border-radius: 4px;
+
 }
 .host-van-detail-image{
   padding: 12px;
