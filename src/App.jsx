@@ -33,11 +33,11 @@ const router=createBrowserRouter(createRoutesFromElements(
 <Route path="host" element={<HostLayout />}>
 
   <Route index element={<Dashboard />} 
-   loader={ async () =>  await requireAuth()   } 
+   loader={ async () => { return null }  } 
    />
   <Route path="reviews" element={<Reviews />} 
-
-   loader={ async () => { return null }  }   />
+ loader={ async () =>  await requireAuth()   } 
+    />
   <Route path="income" element={<Income />} 
   loader={ async () => { return null }  }   />
   <Route path="vans" element={<HostVans />}
