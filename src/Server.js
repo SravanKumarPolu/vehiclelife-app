@@ -5,7 +5,7 @@ createServer({
     vans: Model,
   },
   seeds(server) {
-    server.create("van", { 
+    server.create("van", {
       id: "1", 
       name: "Modest Explorer", 
       price: 2300,
