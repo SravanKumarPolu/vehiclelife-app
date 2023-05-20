@@ -4,7 +4,11 @@ createServer({
   models: {
     vans: Model,
   },
-  seeds(server) {
+
+
+  seeds(server){
+
+
     server.create("van", {
       id: "1", 
       name: "Modest Explorer", 
@@ -13,6 +17,7 @@ createServer({
       imageUrl: "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png", 
       type: "luxury" 
     })
+
     server.create("van", { 
       id: "2",
       
@@ -60,21 +65,21 @@ createServer({
       type: "rugged" ,
       hostId:"123",
     })
+
   },
-  routes() {
+  routes(){
     this.namespace = "api"
     this.logging=false
      this.timing=2000;
 
-    this.get('/vans', (schema, request) => {
-      
+    this.get("/vans",(schema,request)=>{ 
       // return new  Response(400, { }, { error: "Error fetching data" })
       //  return new Response ({coool:"sravan"},{status:200,statusText:"cool Error"})
       // return {coool:"sravan"}
-      // return new Response(500, {}, { errors: ["The database went on vacation"] })
-          return schema.vans.all()
-    }) 
-
+       return new Response(500, {}, { errors: ["The database went on vacation"] })
+      //return schema.vans.all()
+    })
+    
     this.get('/vans/:id', (schema, request) => {
       const id = request.params.id
       return schema.vans.find(id)
@@ -88,6 +93,6 @@ createServer({
       const id = request.params.id
       return schema.vans.findBy ({id,hostId:"123"})
     })
-
   }
+
 })
