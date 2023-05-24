@@ -72,7 +72,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route
           index
           element={<HostVanInfo />}
-          loader={async ({ request }) => await requireAuth(request)}
+          // loader={async ({ request }) => await requireAuth(request)}
         />
        <Route path="price" element={<HostVanPrice />} />
     <Route path="photo" element={<HostVanPhoto />} />
