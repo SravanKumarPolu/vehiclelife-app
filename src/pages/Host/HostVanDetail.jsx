@@ -27,6 +27,8 @@ export default function HostVanDetail(){
 //         <h1>Loading..</h1>
 //     )
 //   }
+
+    
     return(
         <>
         <section className='host-van-details-section'>

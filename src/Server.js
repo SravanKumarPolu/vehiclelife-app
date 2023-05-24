@@ -54,11 +54,11 @@ createServer({
             }
 
             // At the very least, don't send the password back to the client 😅
-            foundUser.password = undefined
-            return {
-                user: foundUser,
-                token: "Enjoy your pizza, here's your tokens."
-            }
+            // foundUser.password = undefined
+            // return {
+            //     user: foundUser,
+            //     token: "Enjoy your pizza, here's your tokens."
+            // }
         })
     }
 })
