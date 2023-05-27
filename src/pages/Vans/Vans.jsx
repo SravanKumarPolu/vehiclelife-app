@@ -1,37 +1,38 @@
 import React from "react";
  import {  getVans }  from "../../api";
-import {Link ,useSearchParams}  from 'react-router-dom'
+import {Link ,useSearchParams,useLoaderData}  from 'react-router-dom'
 
 
+export function Loader(){
+   return getVans();
+}
 export default function Vans(){
      const [searchParams,setSearchParams]=useSearchParams();
-    const [vans,setVans]=React.useState([])
-      const [loading,setLoading]=React.useState(false)
+    //const [vans,setVans]=React.useState([])
+      // const [loading,setLoading]=React.useState(false)
       const [error,setError]=React.useState(null)
+      const vans=useLoaderData();
       const typeFilter=searchParams.get("type")
-
+console.log(vans)
  
  
 
-    React.useEffect(() => {
-      async function loadVans(){
-        setLoading(true)
-        try{
-          const data= await getVans()
-        setVans(data)
-        }catch(err){
-          console.log("there is error")
-          console.log(err)
-          setError(err)
-        }finally{
-          setLoading(false)
-        }
-        
-        
-      }
-loadVans()
-
-    }, [])
+//     React.useEffect(() => {
+//       async function loadVans(){
+//         setLoading(true)
+//         try{
+//           const data= await getVans()
+//         setVans(data)
+//         }catch(err){
+//           console.log("there is error")
+//           console.log(err)
+//           setError(err)
+//         }finally{
+//           setLoading(false)
+//         }
+//       }
+// loadVans()
+//     }, [])
     
 
  
@@ -73,9 +74,9 @@ loadVans()
 
 
 
-    if(loading) {
-      return <h1>Loading...</h1>
-}
+//     if(loading) {
+//       return <h1>Loading...</h1>
+// }
 if(error){
   return <h1>There was an error:{error.message}</h1>
 }

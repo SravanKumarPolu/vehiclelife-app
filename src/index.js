@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css'
-import { BrowserRouter,Routes,Route,Link } from 'react-router-dom';
+import { BrowserRouter,Routes,RouterProvider,Route, createBrowserRouter,createRoutesFromElements} from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
-import Vans from './pages/Vans/Vans';
+import Vans  ,{Loader as vansLoader}from './pages/Vans/Vans';
 import VansDetail from './pages/Vans/VansDetail';
 import Layout from './components/Layout';
 import HostLayout from './components/HostLayout';
@@ -23,16 +23,11 @@ import './server.js'
 
 
 //import reportWebVitals from './reportWebVitals';
-
-function App(){
-  return(
-    <BrowserRouter>
- 
-    <Routes>
+const router=createBrowserRouter(createRoutesFromElements(
 <Route element={<Layout />}>
 <Route index element={<Home />} />
       <Route path="/about" element={<About />} />
-      <Route path="/vans" element={<Vans />} />
+      <Route path="/vans"  element={<Vans />} loader={vansLoader} />
       <Route path="/vans/:id" element={<VansDetail />} />
 
       <Route path="/host" element={<HostLayout />}>
@@ -50,9 +45,10 @@ function App(){
       </Route>
       <Route path='*' element={<NotFound />} />
 </Route>
-     
-    </Routes>
-  </BrowserRouter>
+))
+function App(){
+  return(
+ <RouterProvider router={router} />
   )
 }
 
