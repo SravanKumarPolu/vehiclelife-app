@@ -9,6 +9,7 @@ import Vans  ,{Loader as vansLoader}from './pages/Vans/Vans';
 import VansDetail from './pages/Vans/VansDetail';
 import Layout from './components/Layout';
 import HostLayout from './components/HostLayout';
+import Error from './components/Error';
 import Dashboard from './pages/Host/Dashboard';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
@@ -27,7 +28,7 @@ const router=createBrowserRouter(createRoutesFromElements(
 <Route element={<Layout />}>
 <Route index element={<Home />} />
       <Route path="/about" element={<About />} />
-      <Route path="/vans"  element={<Vans />} loader={vansLoader} />
+      <Route path="/vans"  element={<Vans />} loader={vansLoader}  errorElement={<Error />} />
       <Route path="/vans/:id" element={<VansDetail />} />
 
       <Route path="/host" element={<HostLayout />}>
