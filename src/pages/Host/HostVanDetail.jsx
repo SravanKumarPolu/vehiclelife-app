@@ -1,11 +1,11 @@
  import React from 'react';
  import { Link, Outlet,NavLink, useParams,useLoaderData } from "react-router-dom";
-import { getHostVans  } from '../../api';
+// import { getHostVans  } from '../../api';
 
 
-export function loader({params}){
-    return getHostVans(params.id)
-}
+// export function loader({params}){
+//     return getHostVans(params.id)
+// }
 export default function HostVanDetail(){
     
     const {id}=useParams()
@@ -21,7 +21,7 @@ export default function HostVanDetail(){
         .then(res=>res.json())
 .then(data=>setCurrentVan(data.vans))
     },[])
-  console.log(currentVan)
+//   console.log(currentVan)
   if(!currentVan){
     return (
         <h1>Loading..</h1>
@@ -57,7 +57,7 @@ style={({isActive})=>isActive ? activeStyles : null }
         <Outlet context={{currentVan}}/>
         </div>
         </section>
-    
+     
         </>
          
     )
