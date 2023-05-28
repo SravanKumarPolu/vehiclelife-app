@@ -36,7 +36,10 @@ const router=createBrowserRouter(createRoutesFromElements(
        loader={vanDetailLoader} />
 
       <Route path="/host" element={<HostLayout />}>
-      <Route index element={<Dashboard />} />
+      <Route index element={<Dashboard />}  loader={async ()=>{
+          await requireAuth()
+          return null;
+        }} />
       <Route path="/host/income" element={<Income />}
         loader={async ()=>{
           await requireAuth()
