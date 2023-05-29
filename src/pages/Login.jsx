@@ -1,10 +1,14 @@
 import React from "react"
 import {
     
-    useNavigation
    
+   useLoaderData
 } from "react-router-dom"
 
+
+export function loader({request}){
+  return new URL(request.url).searchParams.get("message")
+}
 
 
 export default function Login() {
@@ -12,7 +16,7 @@ export default function Login() {
     email: "",
     password: ""
   });
-
+const message = useLoaderData();
   function handleSubmit(e) {
     e.preventDefault();
     console.log(loginFormData);
@@ -29,6 +33,7 @@ export default function Login() {
     return (
       <div className="login-container">
       <h1>Sing in to your account</h1>
+      {message && <h3 className="red">{message}</h3>}
       <form onSubmit={handleSubmit} className="login-form">
           <input 
           name="email" onChange={handleChange} type="email"
