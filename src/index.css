@@ -215,11 +215,13 @@ a.active-link{
   display: flex;
   align-items: center;
   padding-block: 10px;
+  
 }
  .active-link1 button {
   text-decoration: none;
   font-weight: bold;
-  color:red
+  color:red;
+  cursor: pointer;
 }
 /* .van-list-filter-buttons button{
 background:rgb(237, 92, 175);
@@ -244,6 +246,7 @@ margin: 4px;
   background-color:#FFCC8D;
   border:none;
   border-color: transparent;
+  cursor: pointer;
 }
 .selected{
   background-color: #ffffff;
