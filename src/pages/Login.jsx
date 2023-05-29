@@ -33,7 +33,7 @@ const message = useLoaderData();
     return (
       <div className="login-container">
       <h1>Sing in to your account</h1>
-      {message && <h3 className="red">{message}</h3>}
+      {message && <h4 className="loginRed">{message}</h4>}
       <form onSubmit={handleSubmit} className="login-form">
           <input 
           name="email" onChange={handleChange} type="email"

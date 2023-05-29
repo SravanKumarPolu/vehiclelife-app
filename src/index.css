@@ -471,6 +471,9 @@ a>.van-list>.van-info p {
   font-weight: 600;
   font-size:x-large;
 }
+.loginRed{
+  color:rgb(226, 43, 147)
+}
 .login-form{
 display: flex;
 flex-direction: column;
