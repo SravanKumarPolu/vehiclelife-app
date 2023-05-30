@@ -16,12 +16,16 @@ export default function Login() {
     email: "",
     password: ""
   });
+  const [status,setStatus]=React.useState("idle")
 const message = useLoaderData();
 
   function handleSubmit(e) {
     e.preventDefault();
+    setStatus("submitting")
     loginUser(loginFormData)
     .then(data=>console.log(data))
+    .catch()
+    .finally(()=>setStatus("idle"))
     console.log(loginFormData);
   }
 
@@ -45,8 +49,9 @@ const message = useLoaderData();
           <input name="password" onChange={handleChange}
           type="password" placeholder="Password"
           value={loginFormData.password} />
-          <button>Log in</button>
+          <button disabled={status==="submitting"}>
+          {status==="submitting"? "Login in ...":"Log in"}</button>
       </form>
-  </div>
+  </div> 
     )
 }
