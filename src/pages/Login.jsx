@@ -2,7 +2,8 @@ import React from "react"
 import {
     
    
-   useLoaderData
+   useLoaderData,
+   useNavigate
 } from "react-router-dom"
 import { loginUser } from "../api";
 
@@ -19,13 +20,17 @@ export default function Login() {
   const [status,setStatus]=React.useState("idle")
   const [error,setError]=React.useState(null)
 const message = useLoaderData();
+const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
     setStatus("submitting")
     setError(null)
     loginUser(loginFormData)
-    .then(data=>console.log(data))
+    // .then(data=>console.log(data))
+    .then(data=>{
+      navigate("/about",{replace:true})
+    })
     .catch(err=>setError(err))
     .finally(()=>setStatus("idle"))
     console.log(loginFormData);

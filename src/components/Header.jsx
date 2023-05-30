@@ -19,13 +19,14 @@ export default function Header() {
         #VANLIFE
       </Link>
       <nav>
-      <NavLink  to="/host"
-className={({isActive})=>isActive? "active-link" : null}>Host</NavLink>
-        <NavLink to="/" className={({isActive})=>isActive? "active-link" : null}
-        >Home</NavLink>
-        <NavLink to="/about"
+      <NavLink to="/about"
         className={({isActive})=>isActive? "active-link" : null}
         >About </NavLink>
+          <NavLink to="/" className={({isActive})=>isActive? "active-link" : null}
+        >Home</NavLink>
+      <NavLink  to="/host"
+className={({isActive})=>isActive? "active-link" : null}>Host</NavLink>
+
         <NavLink to="/vans"
         className={({isActive})=>isActive? "active-link" : null}>Vans</NavLink>
       
