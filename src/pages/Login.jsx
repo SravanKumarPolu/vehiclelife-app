@@ -17,14 +17,16 @@ export default function Login() {
     password: ""
   });
   const [status,setStatus]=React.useState("idle")
+  const [error,setError]=React.useState(null)
 const message = useLoaderData();
 
   function handleSubmit(e) {
     e.preventDefault();
     setStatus("submitting")
+    setError(null)
     loginUser(loginFormData)
     .then(data=>console.log(data))
-    .catch()
+    .catch(err=>setError(err))
     .finally(()=>setStatus("idle"))
     console.log(loginFormData);
   }
@@ -41,6 +43,7 @@ const message = useLoaderData();
       <div className="login-container">
       <h1>Sing in to your account</h1>
       {message && <h4 className="loginRed">{message}</h4>}
+      {error && <h4 className="loginRed">{error.message}</h4>}
       <form onSubmit={handleSubmit} className="login-form">
           <input 
           name="email" onChange={handleChange} type="email"
