@@ -3,7 +3,9 @@ import { BsPersonCircle } from 'react-icons/bs';
 import { Link,NavLink } from "react-router-dom";
 
 export default function Header() {
-  
+  function fakeLogOut(){
+    localStorage.removeItem("loggedin")
+  }
   return (
 <header>
 
@@ -30,12 +32,13 @@ className={({isActive})=>isActive? "active-link" : null}>Host</NavLink>
         <NavLink to="/vans"
         className={({isActive})=>isActive? "active-link" : null}>Vans</NavLink>
       
-
+<button onClick={fakeLogOut}>X</button>
       <Link to="login" className="login-link"> 
        
       <BsPersonCircle className="login-icon" size={22} />
 
        </Link>
+
       </nav>
     
 

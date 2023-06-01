@@ -1,16 +1,24 @@
 import React from "react"
 import {
     
-   
+   redirect,
    useLoaderData,
-   useNavigate
+   useNavigate,Form
 } from "react-router-dom"
 import { loginUser } from "../api";
 
 export function loader({request}){
   return new URL(request.url).searchParams.get("message")
 }
-
+export async function action({request}){
+  const formData = await request.formData()
+  const password =formData.get("password")
+  const email=formData.get("email")
+  const data= await loginUser({email,password})
+  localStorage.setItem("loggedin",true)
+  
+  return redirect("/host")
+}
 
 export default function Login() {
   const [loginFormData, setLoginFormData] = React.useState({
@@ -49,7 +57,7 @@ const navigate = useNavigate()
       <h1>Sing in to your account</h1>
       {message && <h4 className="loginRed">{message}</h4>}
       {error && <h4 className="loginRed">{error.message}</h4>}
-      <form onSubmit={handleSubmit} className="login-form">
+      <Form  method="post" className="login-form" replace>
           <input 
           name="email" onChange={handleChange} type="email"
           placeholder="Email address"
@@ -59,7 +67,7 @@ const navigate = useNavigate()
           value={loginFormData.password} />
           <button disabled={status==="submitting"}>
           {status==="submitting"? "Login in ...":"Log in"}</button>
-      </form>
+      </Form>
   </div> 
     )
 }
