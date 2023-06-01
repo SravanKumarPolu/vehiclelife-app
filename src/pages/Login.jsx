@@ -3,7 +3,8 @@ import {
     
    redirect,
    useLoaderData,
-   useNavigate,Form
+   useNavigate,Form,
+useActionData
 } from "react-router-dom"
 import { loginUser } from "../api";
 
@@ -14,10 +15,16 @@ export async function action({request}){
   const formData = await request.formData()
   const password =formData.get("password")
   const email=formData.get("email")
-  const data= await loginUser({email,password})
-  localStorage.setItem("loggedin",true)
-  
-  return redirect("/host")
+  try{
+    const data= await loginUser({email,password})
+    localStorage.setItem("loggedin",true)
+    
+    return redirect("/host")
+  }
+  catch(err){
+    return err.message
+  }
+
 }
 
 export default function Login() {
@@ -27,6 +34,7 @@ export default function Login() {
   });
   const [status,setStatus]=React.useState("idle")
   const [error,setError]=React.useState(null)
+  const errorMessage= useActionData();
 const message = useLoaderData();
 const navigate = useNavigate()
 
@@ -39,7 +47,7 @@ const navigate = useNavigate()
     .then(data=>{
       navigate("/about",{replace:true})
     })
-    .catch(err=>setError(err))
+    // .catch(err=>setError(err))
     .finally(()=>setStatus("idle"))
     console.log(loginFormData);
   }
@@ -56,7 +64,8 @@ const navigate = useNavigate()
       <div className="login-container">
       <h1>Sing in to your account</h1>
       {message && <h4 className="loginRed">{message}</h4>}
-      {error && <h4 className="loginRed">{error.message}</h4>}
+      {/* {error && <h4 className="loginRed">{error.message}</h4>} */}
+      {errorMessage && <h4 className="loginRed">{errorMessage}</h4>}
       <Form  method="post" className="login-form" replace>
           <input 
           name="email" onChange={handleChange} type="email"
