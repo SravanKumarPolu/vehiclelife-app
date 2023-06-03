@@ -32,7 +32,7 @@ className={({isActive})=>isActive? "active-link" : null}>Host</NavLink>
         <NavLink to="/vans"
         className={({isActive})=>isActive? "active-link" : null}>Vans</NavLink>
       
-<button onClick={fakeLogOut}>X</button>
+<button onClick={fakeLogOut} className="logout">X</button>
       <Link to="login" className="login-link"> 
        
       <BsPersonCircle className="login-icon" size={22} />

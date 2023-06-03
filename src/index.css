@@ -577,6 +577,12 @@ margin: 14px;
   color: #161616;
   text-decoration: underline;
 }
+.logout:is(:focus,:active,:hover){
+  background-color: red;
+  color:white;
+  border-color: blue;
+  border-radius: 3%;
+}
 
 
 /* FOOTER */
