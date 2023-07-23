@@ -1,19 +1,17 @@
 * {
   box-sizing: border-box;
-
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #FFF7ED;
+  background-color: #fff7ed;
   font-family: "Inter", sans-serif;
 }
 
 body::-webkit-scrollbar {
   display: none;
-
 }
 
 body {
@@ -37,9 +35,8 @@ header .site-logo {
 }
 
 header a {
-  
   text-decoration: none;
-  color: #4D4D4D;
+  color: #4d4d4d;
   font-weight: 600;
   padding: 5px 20px;
 }
@@ -48,17 +45,15 @@ header a:hover {
   color: #161616;
   text-decoration: none;
 }
-header  .login-link  {
-margin-left: 12px;
+header .login-link {
+  margin-left: 12px;
   cursor: pointer;
 }
- .login-icon {
+.login-icon {
   position: absolute;
   padding: 1px;
-  right:1% ;
-  color: #FF8C38;
-  
-
+  right: 1%;
+  color: #ff8c38;
 }
 
 .link-button {
@@ -66,25 +61,47 @@ margin-left: 12px;
   text-align: center;
   text-decoration: none;
   border: none;
-  padding: .75rem 1.375rem;
+  padding: 0.75rem 1.375rem;
   color: initial;
   font-weight: 700;
   border-radius: 5px;
   cursor: pointer;
-  transform: tranform .1s ease-in-out;
-
+  transform: tranform 0.1s ease-in-out;
 }
 
 .link-button:hover {
-  transform: translate(1px, 1px)
+  transform: translate(1px, 1px);
 }
 
-a.active-link{
+a.active-link {
   text-decoration: none;
   font-weight: bold;
-  color:red
+  color: red;
 }
 
+/* CSS for portable phones (up to 600 pixels wide) */
+@media (max-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    padding-block: 5px;
+  }
+
+  header .site-logo {
+    font-size: 20px;
+  }
+
+  header a {
+    font-size: 14px;
+    padding: 3px 10px;
+  }
+
+  .login-icon {
+    font-size: 18px;
+    right: 5%;
+  }
+}
 
 /* Home page */
 .home-container {
@@ -122,22 +139,22 @@ a.active-link{
   width: 100%;
   margin-top: 27px;
 
-  padding-block: .75rem;
+  padding-block: 0.75rem;
   color: white;
   font-weight: 700;
   border-radius: 5px;
   cursor: pointer;
-  transition: transform .1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
 }
 
 .home-container a {
   text-decoration: none;
 
   padding: 8px;
-  background-color: #FF8C38;
+  background-color: #ff8c38;
 }
 
-.about-page-container{
+.about-page-container {
   margin: 20px;
 }
 .about-container a:hover {
@@ -153,14 +170,11 @@ a.active-link{
   padding: 20px;
   justify-content: center;
   align-items: center;
-
 }
-
-
 
 .about-page-content {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   margin-top: 20px;
   padding-inline: 23px;
   color: #161616;
@@ -181,7 +195,7 @@ a.active-link{
   flex-wrap: wrap;
   align-items: center;
   text-align: center;
-  background-color: #FFCC8D;
+  background-color: #ffcc8d;
   color: #161616;
 
   padding-inline: 32px;
@@ -195,14 +209,12 @@ a.active-link{
   padding-block: 37px;
 }
 
-.about-page-cta>a {
+.about-page-cta > a {
   background-color: #161616;
 
   color: white;
   border-radius: 10px;
-
 }
-
 
 /* Van */
 .van-list-container {
@@ -211,16 +223,14 @@ a.active-link{
   padding: 8px;
 }
 .van-list-filter-buttons {
- 
   display: flex;
   align-items: center;
   padding-block: 10px;
-  
 }
- .active-link1 button {
+.active-link1 button {
   text-decoration: none;
   font-weight: bold;
-  color:red;
+  color: red;
   cursor: pointer;
 }
 /* .van-list-filter-buttons button{
@@ -231,81 +241,71 @@ padding: 4px;
 margin: 4px;
 } */
 
-
-.van-list-filter-buttons a{
+.van-list-filter-buttons a {
   text-decoration: none;
   padding: 4px;
   margin: 8px;
-  
 }
-.van-list-filter-buttons button{
+.van-list-filter-buttons button {
   padding: 4px;
   width: 6em;
   margin: 4px;
   border-radius: 4px;
-  background-color:#FFCC8D;
-  border:none;
+  background-color: #ffcc8d;
+  border: none;
   border-color: transparent;
   cursor: pointer;
 }
-.selected{
+.selected {
   background-color: #ffffff;
   color: #161616;
-  
-
 }
-.simple.selected:is(:hover,:focus){
+.simple.selected:is(:hover, :focus) {
   padding: 4px;
   width: 6em;
   margin: 4px;
   font-weight: 600;
-  box-shadow: 0 0 1px 1px ;
-  color:gold;
+  box-shadow: 0 0 1px 1px;
+  color: gold;
   background-color: white;
 }
- .comfort.selected:is(:hover,:focus) {
+.comfort.selected:is(:hover, :focus) {
   padding: 4px;
   width: 6em;
   margin: 4px;
   font-weight: 600;
-  box-shadow: 0 0 1px 1px ;
-  color:gold;
+  box-shadow: 0 0 1px 1px;
+  color: gold;
   background-color: white;
   border-radius: 4px;
- 
 }
-.luxury.selected:is(:hover,:focus){
+.luxury.selected:is(:hover, :focus) {
   padding: 4px;
   width: 6em;
   margin: 4px;
   font-weight: 600;
-  box-shadow: 0 0 1px 1px ;
-  color:gold;
+  box-shadow: 0 0 1px 1px;
+  color: gold;
   background-color: white;
   border-radius: 4px;
-
 }
-.rugged.selected:is(:hover,:focus){
+.rugged.selected:is(:hover, :focus) {
   padding: 4px;
   width: 6em;
   margin: 4px;
   border-radius: 4px;
   font-weight: 600;
-  box-shadow: 0 0 1px 1px ;
-  color:gold;
+  box-shadow: 0 0 1px 1px;
+  color: gold;
   background-color: white;
 }
 
-.van-type-clear-filter{
+.van-type-clear-filter {
   padding: 4px;
   width: 6em;
   margin: 4px;
   text-align: center;
   border-radius: 4px;
-
-  
-
-  
 }
 .van-list {
   display: flex;
@@ -314,7 +314,6 @@ margin: 4px;
   text-align: center;
   margin: 20px;
   padding: 20px;
-
 }
 
 .van-title {
@@ -360,14 +359,11 @@ font-size: medium;
   background:rgb(226, 43, 147);
 } */
 
-
-
 /* inside the Link */
 
 .van-title a {
   text-decoration: none;
   color: #161616;
-
 }
 
 a .van-info {
@@ -375,20 +371,19 @@ a .van-info {
   padding: 8px;
 }
 
-.van-title>a>.van-info h3 {
+.van-title > a > .van-info h3 {
   margin: 8px;
   padding: 8px;
   font-size: medium;
 }
 
-a>.van-list>.van-info p {
-
+a > .van-list > .van-info p {
   margin: 8px;
   padding: 8px;
   font-size: small;
 }
 
-.van-title>a>.selected {
+.van-title > a > .selected {
   color: white;
   background: blueviolet;
   padding: 8px;
@@ -397,14 +392,12 @@ a>.van-list>.van-info p {
 }
 .van-type {
   background: blueviolet;
-  color:white;
+  color: white;
 }
 
-.van-title>a>.selected:hover {
+.van-title > a > .selected:hover {
   background: rgb(226, 43, 147);
 }
-
-
 
 /* van-detail-container */
 .van-detail-container {
@@ -417,12 +410,9 @@ a>.van-list>.van-info p {
   margin-left: 60px;
   margin-right: 60px;
   padding: 20px;
-
-
 }
 
-.van-detail-container>.van-detail {
-
+.van-detail-container > .van-detail {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -430,10 +420,7 @@ a>.van-list>.van-info p {
   text-align: center;
   margin: 20px;
   padding: 20px;
- 
-
 }
-
 
 .van-detail-container .van-detail img {
   width: 300px;
@@ -455,120 +442,105 @@ a>.van-list>.van-info p {
 }
 
 .van-detail-container .van-detail .link-button {
-  background-color: #FF8C38;
+  background-color: #ff8c38;
 }
-
-
 
 /* Login page */
 
-.login-container{
-  display:flex;
+.login-container {
+  display: flex;
   flex-direction: column;
   align-items: center;
   margin: 14px;
   padding: 14px;
-  
 }
-.login-container h1{
+.login-container h1 {
   font-weight: 600;
-  font-size:x-large;
+  font-size: x-large;
 }
-.loginRed{
-  color:rgb(226, 43, 147)
+.loginRed {
+  color: rgb(226, 43, 147);
 }
-.login-form{
-display: flex;
-flex-direction: column;
-align-items: center;
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-margin: 14px;
-
+  margin: 14px;
 }
-.login-form input{
+.login-form input {
   padding: 8px;
-  width:20em;
+  width: 20em;
   border: none;
   margin: 1px;
-  background-color:#ffffff;
+  background-color: #ffffff;
 }
-.login-form input:is(:hover,:focus){
-  box-shadow: 0 0 2px 2px #FF8C38;
-  background-color:#ffffff;
-  
+.login-form input:is(:hover, :focus) {
+  box-shadow: 0 0 2px 2px #ff8c38;
+  background-color: #ffffff;
 }
-.login-form button{
+.login-form button {
   padding: 10px;
   margin: 25px;
-  width:  20em;
-  border:none;
+  width: 20em;
+  border: none;
 
   position: relative;
- overflow: hidden;
+  overflow: hidden;
   border-radius: 5px;
   font-weight: 600;
-  cursor:pointer;
+  cursor: pointer;
   isolation: isolate;
-
 }
-.login-form button:is(:hover,:focus){
+.login-form button:is(:hover, :focus) {
   box-shadow: 0 0 2px 2px;
-  background-color:#ffffff;
-  color: #FF8C38;
-  
+  background-color: #ffffff;
+  color: #ff8c38;
 }
-.login-form  button>span{
-  position:relative;
+.login-form button > span {
+  position: relative;
   z-index: -1;
   width: 33.333%;
   height: 100%;
 }
-.login-form button >:first-child{
+.login-form button > :first-child {
   left: 0;
   top: 0;
 }
-.login-form button >:last-child {
-  right : 0;
+.login-form button > :last-child {
+  right: 0;
   top: 0;
-
 }
 
-
-.login-form  button::before {
+.login-form button::before {
   content: " ";
- width:0.1%;
- background-color:none ;
- aspect-ratio:1;
- inset:0;
- background-color:  #34fff8b5;
- color:#161616;
- z-index:-1;
- border-radius: 50%;
- position:absolute;
+  width: 0.1%;
+  background-color: none;
+  aspect-ratio: 1;
+  inset: 0;
+  background-color: #34fff8b5;
+  color: #161616;
+  z-index: -1;
+  border-radius: 50%;
+  position: absolute;
   margin: auto;
   transition: transform 500ms;
 }
 
-.login-form  button:active::before{
+.login-form button:active::before {
   transform: scale(2500);
-
 }
-.login-form button:has(:first-child:active)::before{
+.login-form button:has(:first-child:active)::before {
   margin-left: 0;
 }
-.login-form button:has(:last-child:active)::before{
+.login-form button:has(:last-child:active)::before {
   margin-right: 0;
 }
-
-
-
-
-
 
 /* HostLayout */
 .host-nav a {
   text-decoration: none;
-  color: #4D4D4D;
+  color: #4d4d4d;
   font-weight: 600;
   padding: 5px 20px;
 }
@@ -577,19 +549,17 @@ margin: 14px;
   color: #161616;
   text-decoration: underline;
 }
-.logout:is(:focus,:active,:hover){
+.logout:is(:focus, :active, :hover) {
   background-color: red;
-  color:white;
+  color: white;
   border-color: blue;
-  
 }
 
-
 /* FOOTER */
-footer{
+footer {
   padding: 20px;
   background-color: #161616;
-  color:white;
+  color: white;
   text-align: center;
 }
 
@@ -626,7 +596,7 @@ footer{
   font-size: 24px;
   margin-top: 60px;
 }
-.host-income  .transaction{
+.host-income .transaction {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -647,8 +617,6 @@ footer{
   color: #4d4d4d;
 }
 
-
-
 /* HOST REVIEWS */
 .host-reviews {
   padding-inline: 26px;
@@ -657,7 +625,7 @@ footer{
 .host-reviews .top-text {
   display: flex;
   flex-direction: column;
- padding-top: 24px;
+  padding-top: 24px;
   justify-content: space-between;
   margin-bottom: 32px;
 }
@@ -674,7 +642,6 @@ footer{
 
 .host-reviews > img {
   margin-bottom: 36px;
-
 }
 
 .host-reviews .review {
@@ -706,43 +673,36 @@ footer{
   margin-right: 5px;
 }
 
-
 /* HOST-VANS */
-.host-van-list-container{
+.host-van-list-container {
   padding: 20px;
   margin: 20px;
   display: block;
 
   text-align: center;
-  
 }
 .host-van-list {
-  
   text-decoration: none;
-  
 }
-a .host-van-single{
+a .host-van-single {
   display: flex;
   flex-wrap: wrap;
-  background-color:white;
+  background-color: white;
   border-radius: 5px;
- align-items: center;
- border:1px solid gold;
+  align-items: center;
+  border: 1px solid gold;
   padding: 10px;
   margin: 10px;
-  
 }
-.host-van-single img{
-  width:120px;
+.host-van-single img {
+  width: 120px;
   height: 120px;
   margin-left: 20px;
 }
 .host-van-list a {
-
-text-decoration: none;
-
+  text-decoration: none;
 }
-.host-van-info{
+.host-van-info {
   display: flex;
   text-align: left;
   flex-direction: column;
@@ -751,120 +711,112 @@ text-decoration: none;
   margin-left: 20px;
 }
 
-.host-van-info h3{
-
- color: #161616;
- font-weight: 600;
+.host-van-info h3 {
+  color: #161616;
+  font-weight: 600;
 }
-.host-van-info p{
+.host-van-info p {
   color: #161616;
   font-weight: 300;
 }
 
-
 /* host-van-details */
-.host-van-details-section{
-
-margin: 14px;
-padding: 14px;
+.host-van-details-section {
+  margin: 14px;
+  padding: 14px;
 }
-.back-button{
-  padding:5px;
-  margin:8px;
-  background-color: #FF8C38;
+.back-button {
+  padding: 5px;
+  margin: 8px;
+  background-color: #ff8c38;
   text-decoration: none;
   color: white;
   border-radius: 5px;
-
 }
-.host-van-details-page{
-  margin:12px;
+.host-van-details-page {
+  margin: 12px;
   padding: 12px;
 }
 
-.host-van-details-container{
+.host-van-details-container {
   display: flex;
   flex-direction: column;
   padding: 20px;
   margin: 20px;
   background-color: white;
 }
-.host-van-details-block{
+.host-van-details-block {
   display: flex;
 
   padding: 20px;
   margin: 20px;
   background-color: white;
 }
-.host-van-details{
+.host-van-details {
   padding: 20px;
 }
 .host-van-details span {
   padding: 5px;
-  margin:2px;
+  margin: 2px;
   color: #ffffff;
-  background-color:  rgb(226, 43, 147);
+  background-color: rgb(226, 43, 147);
   border-radius: 6px;
 }
-.host-van-details p{
+.host-van-details p {
   font-weight: 500;
 }
 .host-van-detail-nav a {
-background-color: #FFCC8D;
-text-decoration: none;
-color:white;
- border-radius: 5px; 
+  background-color: #ffcc8d;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
   padding: 6px;
   margin: 6px;
 }
 
-.host-van-detail-nav a:is(:focus,:hover){
-  
+.host-van-detail-nav a:is(:focus, :hover) {
   font-weight: 600;
-  box-shadow: 0 0 1px 1px ;
-  color:gold;
+  box-shadow: 0 0 1px 1px;
+  color: gold;
   background-color: white;
   border-radius: 4px;
-
 }
-.host-van-detail-image{
+.host-van-detail-image {
   padding: 12px;
   width: 12em;
   margin: 6px;
   border-radius: 1em;
 }
-.host-van-detail-price{
+.host-van-detail-price {
   padding: 14px;
   margin: 10px;
-
 }
-.host-van-detail-price span{
+.host-van-detail-price span {
   font-weight: 300;
 }
-.host-van-detail-info h4{
- font-weight: lighter;
+.host-van-detail-info h4 {
+  font-weight: lighter;
 }
-.host-van-detail-info h4 span{
-  font-weight:600;
- } 
- .host-van-detail-info h3{
-  font-weight:300;
+.host-van-detail-info h4 span {
+  font-weight: 600;
+}
+.host-van-detail-info h3 {
+  font-weight: 300;
   font-style: oblique;
- } 
-
-.not-found-class{
-  font-weight: 700;
-   padding: 23px;
-   margin: 10px;
-
 }
- .not-found  {
+
+.not-found-class {
+  font-weight: 700;
+  padding: 23px;
+  margin: 10px;
+}
+.not-found {
   padding: 23px;
 }
-.not-found-class a{
+.not-found-class a {
   background-color: #161616;
-  color:white;
+  color: white;
   padding: 1em;
   text-decoration: none;
-  margin-left:45%;
+  margin-left: 45%;
 }
