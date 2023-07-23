@@ -399,6 +399,13 @@ a > .van-list > .van-info p {
   background: rgb(226, 43, 147);
 }
 
+/* CSS for portable phones (up to 600 pixels wide) */
+@media (max-width: 600px) {
+  .van-list-container h1 {
+    font-size: 18px;
+  }
+}
+
 /* van-detail-container */
 .van-detail-container {
   display: flex;
