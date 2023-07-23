@@ -554,6 +554,17 @@ a > .van-list > .van-info p {
   color: white;
   border-color: blue;
 }
+/* CSS for portable phones (up to 600 pixels wide) */
+@media only screen and (max-width: 600px) {
+  .host-nav {
+    display: flex;
+    flex-direction: row;
+  }
+  .host-nav a {
+    font-size: 14px;
+    padding: 3px 10px;
+  }
+}
 
 /* FOOTER */
 footer {
