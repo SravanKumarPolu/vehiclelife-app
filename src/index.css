@@ -396,45 +396,29 @@ font-size: medium;
   text-decoration: none;
   color: #161616;
 }
-
-a .van-info {
-  margin: 8px;
-  padding: 8px;
-}
-
 .van-title > a > .van-info h3 {
   margin: 8px;
   padding: 8px;
   font-size: medium;
 }
-
 a > .van-list > .van-info p {
   margin: 8px;
   padding: 8px;
   font-size: small;
 }
-
 .van-title > a > .selected {
   color: white;
   background: blueviolet;
-  padding: 8px;
+  padding: 6px;
   margin: 6px;
   border-radius: 5px;
 }
-.van-type {
-  background: blueviolet;
-  color: white;
-}
-
 .van-title > a > .selected:hover {
   background: rgb(226, 43, 147);
 }
 
 /* CSS for portable phones (up to 600 pixels wide) */
 @media (max-width: 600px) {
-  .van-list-container h1 {
-    font-size: 18px;
-  }
   .van-list-filter-buttons {
     display: flex;
     flex-direction: column;
@@ -465,6 +449,13 @@ a > .van-list > .van-info p {
   .van-list-filter-buttons button,
   .van-list-filter-buttons a {
     width: 80%;
+  }
+  .van-title > a > .selected {
+    padding: 6px;
+    margin: 4px;
+  }
+  .van-list-container h1 {
+    font-size: 18px;
   }
 }
 
