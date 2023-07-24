@@ -128,12 +128,14 @@ a.active-link {
 
   .nav-links.show {
     display: flex;
+
     position: absolute;
     flex-direction: column;
     margin-left: 1.4rem;
     background-color: white;
     border-radius: 5px;
     justify-content: space-between;
+    /* Add any other styles you want for .nav-links when .menu-icon-label is hovered */
   }
   .login-icon {
     margin-left: 10%;
