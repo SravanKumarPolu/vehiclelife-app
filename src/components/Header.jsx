@@ -63,11 +63,10 @@ export default function Header() {
           >
             Vans
           </NavLink>
-        </div>
-
-        {/* <button onClick={fakeLogOut} className="logout">
+          <button onClick={fakeLogOut} className="logout">
             Logout
-          </button> */}
+          </button>
+        </div>
         <Link to="login" className="login-link">
           <BsPersonCircle className="login-icon" size={22} />
         </Link>
