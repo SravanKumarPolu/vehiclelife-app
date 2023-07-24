@@ -20,10 +20,12 @@ body {
 }
 
 header {
-  height: 110px;
   display: flex;
-  align-items: center;
-  padding-block: 10px;
+  flex-direction: row;
+  margin-right: 0;
+  margin-top: 2rem;
+  align-items: center; /* Align items vertically in the center */
+  padding: 10px; /* Add some padding to the header */
 }
 
 header .site-logo {
@@ -32,6 +34,18 @@ header .site-logo {
   text-transform: uppercase;
   font-weight: 900;
   font-size: 25px;
+}
+.menu-icon-label {
+  display: none;
+}
+.menu-icon {
+  display: none;
+}
+header nav {
+  display: flex;
+  margin-right: 30%;
+  align-self: center;
+  flex-direction: row;
 }
 
 header a {
@@ -45,14 +59,20 @@ header a:hover {
   color: #161616;
   text-decoration: none;
 }
-header .login-link {
-  margin-left: 12px;
+a.active-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: red;
+}
+.login-link {
+  margin-top: 0;
+  margin-left: 90%;
   cursor: pointer;
 }
 .login-icon {
-  position: absolute;
   padding: 1px;
-  right: 1%;
+
+  position: absolute;
   color: #ff8c38;
 }
 
@@ -66,7 +86,7 @@ header .login-link {
   font-weight: 700;
   border-radius: 5px;
   cursor: pointer;
-  transform: tranform 0.1s ease-in-out;
+  transform: transform 0.1s ease-in-out; /* Typo: Change 'tranform' to 'transform' */
 }
 
 .link-button:hover {
@@ -81,25 +101,30 @@ a.active-link {
 
 /* CSS for portable phones (up to 600 pixels wide) */
 @media (max-width: 600px) {
-  header {
+  .menu-icon-label {
     display: flex;
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .menu-icon {
+    display: none;
+  }
+
+  .nav-links.show {
+    /* ... */
+    display: flex;
+    position: absolute;
     flex-direction: column;
-    height: 90px;
-    padding-block: 5px;
+    margin-left: 1.4rem;
+    background-color: white;
+    border-radius: 5px;
+    justify-content: space-between;
+    /* ... */
   }
-
-  header .site-logo {
-    font-size: 20px;
-  }
-
-  header a {
-    font-size: 14px;
-    padding: 3px 10px;
-  }
-
   .login-icon {
-    font-size: 18px;
-    right: 5%;
+    margin-left: 18%;
   }
 }
 

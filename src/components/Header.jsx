@@ -1,50 +1,77 @@
-import React from "react";
-import { BsPersonCircle } from 'react-icons/bs';
-import { Link,NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { BsPersonCircle } from "react-icons/bs";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
-  function fakeLogOut(){
-    localStorage.removeItem("loggedin")
+  function fakeLogOut() {
+    localStorage.removeItem("loggedin");
   }
-  return (
-<header>
 
-  {/* <Link  className="site-logo"to="/">#VANSLIFE</Link>
-  <nav>
-  <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
-    <Link to="/vans">Vans</Link>
-    <Link to="/host">Host</Link>
-  </nav> */}
- 
-      <Link className="site-logo" to="/" >
+  // State to control the collapsible menu
+  const [showMenu, setShowMenu] = useState(false);
+
+  // Toggle the state to show/hide the menu
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  return (
+    <header>
+      <Link className="site-logo" to="/">
         #VANLIFE
       </Link>
       <nav>
-      <NavLink to="/about"
-        className={({isActive})=>isActive? "active-link" : null}
-        >About </NavLink>
-          <NavLink to="/" className={({isActive})=>isActive? "active-link" : null}
-        >Home</NavLink>
-      <NavLink  to="/host"
-className={({isActive})=>isActive? "active-link" : null}>Host</NavLink>
+        {/* Collapsible menu icon */}
+        <input
+          type="checkbox"
+          id="check"
+          className="menu-icon"
+          checked={showMenu}
+          onChange={toggleMenu}
+        />
+        <label htmlFor="check" className="menu-icon-label">
+          <i>
+            {" "}
+            <FontAwesomeIcon icon={faBars} />
+          </i>
+        </label>
+        {/* Navigation links */}
+        <div className={`nav-links ${showMenu ? "show" : ""}`}>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "active-link" : null)}
+          >
+            About
+          </NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active-link" : null)}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/host"
+            className={({ isActive }) => (isActive ? "active-link" : null)}
+          >
+            Host
+          </NavLink>
+          <NavLink
+            to="/vans"
+            className={({ isActive }) => (isActive ? "active-link" : null)}
+          >
+            Vans
+          </NavLink>
+        </div>
 
-        <NavLink to="/vans"
-        className={({isActive})=>isActive? "active-link" : null}>Vans</NavLink>
-      
-<button onClick={fakeLogOut} className="logout">X</button>
-      <Link to="login" className="login-link"> 
-       
-      <BsPersonCircle className="login-icon" size={22} />
-
-       </Link>
-
+        {/* <button onClick={fakeLogOut} className="logout">
+            Logout
+          </button> */}
+        <Link to="login" className="login-link">
+          <BsPersonCircle className="login-icon" size={22} />
+        </Link>
       </nav>
-    
-
     </header>
-    
-
-  )
-  
+  );
 }
