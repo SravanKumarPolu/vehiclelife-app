@@ -215,6 +215,36 @@ a.active-link {
   color: white;
   border-radius: 10px;
 }
+/* CSS for portable phones (up to 600 pixels wide) */
+@media only screen and (max-width: 600px) {
+  .about-page-container {
+    margin-left: 0px;
+  }
+  .about-hero-image {
+    border-radius: 3%;
+    max-width: 90%;
+    border: solid gold;
+    margin-left: 7%;
+    margin-right: 7%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-page-content h1 {
+    line-height: 35px;
+  }
+  .about-page-cta {
+    padding-inline: 30px;
+    padding-bottom: 30px;
+
+    margin-left: 10%;
+  }
+  .about-page-cta h2 {
+    margin: 0;
+    padding-block: 37px;
+    font-size: medium;
+  }
+}
 
 /* Van */
 .van-list-container {
@@ -268,6 +298,7 @@ margin: 4px;
   box-shadow: 0 0 1px 1px;
   color: gold;
   background-color: white;
+  border-radius: 4px;
 }
 .comfort.selected:is(:hover, :focus) {
   padding: 4px;
@@ -403,6 +434,37 @@ a > .van-list > .van-info p {
 @media (max-width: 600px) {
   .van-list-container h1 {
     font-size: 18px;
+  }
+  .van-list-filter-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .van-list-filter-buttons button {
+    padding: 1px;
+    margin: 1px;
+    font-weight: 500;
+    background-color: #ffcc8d;
+    border: none;
+    border-color: transparent;
+    cursor: pointer;
+  }
+  .simple.selected:is(:hover, :focus),
+  .comfort.selected:is(:hover, :focus),
+  .luxury.selected:is(:hover, :focus),
+  .rugged.selected:is(:hover, :focus) {
+    padding: 1px;
+    width: 80%;
+    margin: 1px;
+    font-weight: 500;
+    box-shadow: none;
+
+    border-radius: 2px;
+  }
+
+  .active-link1 button,
+  .van-list-filter-buttons button,
+  .van-list-filter-buttons a {
+    width: 80%;
   }
 }
 
