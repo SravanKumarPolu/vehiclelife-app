@@ -129,6 +129,37 @@ a.active-link {
   }
 
   .nav-links.show {
+    display: none;
+
+    /* Add any other styles you want for .nav-links when .menu-icon-label is hovered */
+  }
+  .nav-links.show:is(:hover, :focus) {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin-left: 1.3rem;
+    background-color: white;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    justify-content: space-between;
+  }
+  .login-icon {
+    margin-left: 15%;
+  }
+  .menu-icon-label:hover + .nav-links.show {
+    /* display: block; */
+    display: flex;
+
+    position: absolute;
+    flex-direction: column;
+    margin-left: 1.3rem;
+    background-color: white;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    justify-content: space-between;
+  }
+  .menu-icon-label:active + .nav-links.show {
+    /* display: block; */
     display: flex;
 
     position: absolute;
@@ -136,11 +167,8 @@ a.active-link {
     margin-left: 1.4rem;
     background-color: white;
     border-radius: 5px;
+    transition: transform 0.3s ease;
     justify-content: space-between;
-    /* Add any other styles you want for .nav-links when .menu-icon-label is hovered */
-  }
-  .login-icon {
-    margin-left: 15%;
   }
 }
 
@@ -984,7 +1012,7 @@ a .host-van-single {
   padding: 12px;
   width: 12em;
   margin: 6px;
-  border-radius: 1em\;;
+  border-radius: 1em;
 }
 .host-van-detail-price {
   padding: 14px;

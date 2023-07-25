@@ -5,8 +5,12 @@ import { BsPersonCircle } from "react-icons/bs";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("loggedin") === "true"
+  );
   function fakeLogOut() {
     localStorage.removeItem("loggedin");
+    setIsLoggedIn(false);
   }
 
   // State to control the collapsible menu
@@ -63,11 +67,13 @@ export default function Header() {
           >
             Vans
           </NavLink>
-          <NavLink to="login">
-            <button onClick={fakeLogOut} className="logout">
-              Logout
-            </button>
-          </NavLink>
+          {isLoggedIn && (
+            <NavLink to="login">
+              <button onClick={fakeLogOut} className="logout">
+                Logout
+              </button>
+            </NavLink>
+          )}
         </div>
         <Link to="login" className="login-link">
           <BsPersonCircle className="login-icon" size={22} />
