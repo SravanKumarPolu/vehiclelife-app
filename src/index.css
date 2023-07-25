@@ -886,6 +886,38 @@ a .host-van-single {
   color: #161616;
   font-weight: 300;
 }
+/* CSS for portable phones (up to 600 pixels wide) */
+@media only screen and (max-width: 600px) {
+  .host-van-list-container {
+    padding: 10px;
+    margin: 10px;
+    display: block;
+    text-align: center;
+  }
+  a .host-van-single {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 5px;
+    justify-content: center;
+    border: 1px solid gold;
+    padding-top: 20px;
+    margin-top: 2rem;
+    /* margin-top: 20px; */
+  }
+  .host-van-single img {
+    width: 120px;
+    height: 120px;
+    margin-top: 2rem;
+    border-radius: 8px;
+    align-items: center;
+  }
+  .host-van-info h3 {
+    color: #161616;
+    font-weight: 600;
+    font-size: medium;
+  }
+}
 
 /* host-van-details */
 .host-van-details-section {
