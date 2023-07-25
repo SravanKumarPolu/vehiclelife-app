@@ -545,6 +545,36 @@ a > .van-list > .van-info p {
 .van-detail-container .van-detail .link-button {
   background-color: #ff8c38;
 }
+@media only screen and (max-width: 600px) {
+  .van-detail-container > .van-detail {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+  }
+  .van-detail-container .van-detail img {
+    width: 180px;
+    border-radius: 5px;
+  }
+  .van-detail-container .van-detail i {
+    padding: 8px;
+    margin: 8px;
+    margin-top: 10px;
+    color: white;
+    background: blueviolet;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+  .van-detail-container .van-detail h2 {
+    padding: 10px;
+    margin: 10px;
+    font-weight: 900;
+    font-size: 20px;
+  }
+}
 
 /* Login page */
 
