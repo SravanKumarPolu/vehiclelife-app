@@ -507,6 +507,7 @@ a > .van-list > .van-info p {
   align-items: center;
   text-align: center;
   border: 1.5px solid gold;
+  border-radius: 5px;
   margin: 20px;
   margin-left: 60px;
   margin-right: 60px;
@@ -757,6 +758,30 @@ footer {
   font-weight: 500;
   font-size: 20px;
   color: #4d4d4d;
+}
+/* CSS for portable phones (up to 600 pixels wide) */
+@media only screen and (max-width: 600px) {
+  .host-income {
+    width: 100%;
+
+    padding-inline: 10px;
+    color: #161616;
+  }
+  .host-income > h2 {
+    font-size: 28px;
+  }
+
+  .host-income .transaction {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .host-income .transaction > h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .host-income .transaction > p {
+    font-size: 16px;
+  }
 }
 
 /* HOST REVIEWS */
