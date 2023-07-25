@@ -24,6 +24,7 @@ header {
   flex-direction: row;
   margin-right: 0;
   margin-top: 2rem;
+
   align-items: center; /* Align items vertically in the center */
   padding: 10px; /* Add some padding to the header */
 }
@@ -31,6 +32,7 @@ header {
 header .site-logo {
   color: black;
   margin-right: auto;
+  padding-left: 1%;
   text-transform: uppercase;
   font-weight: 900;
   font-size: 25px;
@@ -80,7 +82,7 @@ a.active-link {
 
 .login-link {
   margin-top: 0;
-  margin-left: 82%;
+  margin-left: 80%;
   cursor: pointer;
 }
 .login-icon {
@@ -138,7 +140,7 @@ a.active-link {
     /* Add any other styles you want for .nav-links when .menu-icon-label is hovered */
   }
   .login-icon {
-    margin-left: 10%;
+    margin-left: 18%;
   }
 }
 
