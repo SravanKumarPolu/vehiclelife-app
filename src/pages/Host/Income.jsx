@@ -15,7 +15,7 @@ export default function Income() {
     { amount: 5600, date: "Dec 12, '22", id: "2" },
     { amount: 9800, date: "Dec 3, '22", id: "3" },
   ];
-  const barChartWidth = window.innerWidth <= 600 ? 270 : 500;
+  const barChartWidth = window.innerWidth <= 600 ? 270 : 550;
   return (
     <section className="host-income">
       <h1>Income</h1>
